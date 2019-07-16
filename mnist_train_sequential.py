@@ -1,4 +1,3 @@
-
 #load mnist dataset
 from keras.datasets import mnist
 
@@ -16,8 +15,7 @@ from keras.losses import categorical_crossentropy
 
 import numpy as np
 
-#import pyplot for plotting accuracy and loss trend in training step
-import matplotlib.pyplot as plt
+from plot_history import plot_diagrams_trian_process
 
 #load train and test data
 def prepare_data():
@@ -114,7 +112,6 @@ def main():
     history = train_model(model, X_train, Y_train)
     plot_diagrams_trian_process(history)
     evaluate(model,X_test,Y_test)
-    
 
 if __name__ == '__main__':
     main()
