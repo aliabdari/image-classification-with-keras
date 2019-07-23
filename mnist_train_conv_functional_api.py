@@ -53,18 +53,19 @@ def create_model():
     
     '''
     the difference between functional api and sequential:
-        we should specify the inmput of every layer vice versa to the sequential model that
+        we should specify the input of every layer vice versa to the sequential model that
         we create our model and just add layers to our model
     '''
     
     #adding first layer    
     network_input = layers.Input(shape=(28,28,1))
+    
+    
     '''
     add a convolutional layer
     when we set the padding 'same', it means that the output size will be equal to the input size
     but if we set the padding as 'valid' no padding will be used, so the output size will be a little smaller
     '''
-    
     conv1 = layers.Conv2D(filters=16,kernel_size=3,padding='same')(network_input)
     #add pooling layer
     max_pool1=layers.MaxPool2D(pool_size=(2,2))(conv1)
