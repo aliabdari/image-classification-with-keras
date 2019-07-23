@@ -80,22 +80,6 @@ def train_model(model, X_train, Y_label):
     return network_history.history
 
 
-def plot_diagrams_trian_process(history):
-    
-    plt.xlabel('Epoch')
-    plt.ylabel('Loss')
-    plt.plot(history['loss'])
-    plt.plot(history['val_loss'])
-    plt.legend(['loss','val_loss'])
-    
-    plt.figure()
-    
-    plt.xlabel('Epoch')
-    plt.ylabel('Accuracy')
-    plt.plot(history['acc'])
-    plt.plot(history['val_acc'])
-    plt.legend(['acc','val_acc'])
-
 def evaluate(model,X,Y):
     #evaluate the model
     test_loss,test_acc = model.evaluate(X,Y)
